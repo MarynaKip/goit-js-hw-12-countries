@@ -1,11 +1,13 @@
-{{#each this}}
-<h1>{{name}}</h1>
-<h3>Capital: {{capital}}</h3>
-<h3>Population: {{population}}</h3>
-<h3>Languages: </h3>
-{{#each languages}}
-<li>{{name}}</li>
-{{/each}}
-<img src="{{flag}}" alt="" width="480">
-</li>
-{{/each}}
+<div class="childrenList">
+    {{#each this}}
+    <h1>{{name}}</h1>
+    <h3>Capital: {{capital}}</h3>
+    <h3>Population: {{population}}</h3>
+    <h3>Languages: </h3>
+    {{#each languages}}
+    <li>{{name}}</li>
+    {{/each}}
+    <img src="{{flag}}" alt="" width="480">
+    </li>
+    {{/each}}
+</div>

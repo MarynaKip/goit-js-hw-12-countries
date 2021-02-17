@@ -12,8 +12,10 @@ import RestCountriesApi from './js/rest-countries.js';
 var debounce = require('debounce');
 
 const refs = {
+  input: document.querySelector('.inputField'),
   searchForm: document.querySelector('.search-form'),
   countriesContainer: document.querySelector('.js-countries-container'),
+  //childrenList: document.querySelector('.childrenList'),
 };
 
 const restCountriesApi = new RestCountriesApi();
@@ -33,9 +35,13 @@ function fetchCountries() {
 }
 
 function appendCountries(countries) {
+  if (refs.countriesContainer.firstChild) {
+    refs.countriesContainer.innerHTML = '';
+  }
   let template = '';
   if (countries.length === 1) {
     template = countryTemplate(countries);
+    refs.input.value = '';
   } else if (countries.length > 1 && countries.length < 11) {
     template = countriesTemplate(countries);
   } else {
